@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Produto extends Model
+class Produto extends RModel
 {
 
 }

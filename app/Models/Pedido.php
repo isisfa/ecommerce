@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Pedido extends Model
+class Pedido extends RModel
 {
 
 }
