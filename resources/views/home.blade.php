@@ -14,9 +14,9 @@
         <a href="#" class="navbar-brand">Femme</a>
         <div class="collapse navbar-collapse">
             <div class="navbar-nav">
-                <a class="nav-link" href="HOME">HOME</a>
-                <a class="nav-link" href="Categorias">Categorias</a>
-                <a class="nav-link" href="Cadastrar">Cadastrar</a>
+                <a class="nav-link" href="{{ route('home') }}">HOME</a>
+                <a class="nav-link" href="{{ route('categoria') }}">Categorias</a>
+                <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
             </div>
         </div>
         <a href="#" class="btn btn-sm"><i class="fa fa-shopping-cart"></i></a>
