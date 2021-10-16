@@ -1,18 +1,20 @@
 @extends("layout")
 
 @section("conteudo")
-<h2>Categorias</h2>
+    <div class="col-2">
+        @if (isset($listaCategoria) && count($listaCategoria) > 0)
+            <div class="list-group">
+                <a href="{{ route('categoria') }}" class="list-group-item list-group-item-action @if($idcategoria == 0) active @endif"> Todas </a>
+                @foreach ($listaCategoria as $cat)
+                    <a href="{{ route('categoria_por_id', ['idcategoria' => $cat->id]) }}"
+                        class="list-group-item list-group-item-action @if($cat->id == $idcategoria) active @endif">
+                        {{ $cat->categoria }} </a>
+                @endforeach
+            </div>
+        @endif
+    </div>
 
-    @if (isset($listaCategoria) && count($listaCategoria) > 0)
-        <ul>
-            <li><a href="{{ route('categoria') }}"> Todas </a></li>
-
-            @foreach ($listaCategoria as $cat)
-                <li><a href="{{ route('categoria_por_id', ['idcategoria' => $cat->id]) }}"> {{ $cat->categoria }} </a></li>
-            @endforeach
-        </ul>
-    @endif
-
+    <div class="col-10">
     @include("_produtos", ['lista' => $lista])
-
+    </div>
     @endsection
