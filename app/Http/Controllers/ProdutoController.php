@@ -53,6 +53,8 @@ class ProdutoController extends Controller
 
     public function verCarrinho(Request $request){
         $carrinho = session('cart', []);
-        dd($carrinho);
+        $data = ['cart' => $carrinho];
+
+        return view("carrinho", $data);
     }
 }
