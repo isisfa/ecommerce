@@ -19,11 +19,11 @@ class ClienteController extends Controller
 
         $usuario = new Usuario($values);
         //ISOLADAMENTE: $usuario->cpf = $request->input("cpf", "");
-
+        $usuario->login = $request->input("cpf", "");
         $endereco = new Endereco($values);
         $endereco->logradouro = $request->input("endereco", "");
-        //dd($usuario);
-        dd($endereco);
+
+
 
         return redirect()->route('cadastrar');
     }
