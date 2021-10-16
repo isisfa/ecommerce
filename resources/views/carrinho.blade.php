@@ -15,9 +15,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($cart as $p)
+                @foreach ($cart as $indice => $p)
                    <tr>
-                       <td><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
+                       <td><a href="{{ route('carrinho_excluir', ['indice' => $indice]) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
                        <td>{{ $p->nome }}</td>
                        <td><img src="{{ $p->foto }}" alt="" width="50"></td>
                        <td>{{ $p->valor }}</td>
