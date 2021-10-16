@@ -23,7 +23,13 @@ class ClienteController extends Controller
         $endereco = new Endereco($values);
         $endereco->logradouro = $request->input("endereco", "");
 
+        try{
+            $usuario->save();
+            $endereco->usuario_id = $usuario->id; //relaciona as tabelas
+            $endereco->save();
+        }catch(\Exception $e){
 
+        }
 
         return redirect()->route('cadastrar');
     }
