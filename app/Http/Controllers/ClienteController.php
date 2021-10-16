@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Endereco;
+use App\Services\ClienteService;
 
 class ClienteController extends Controller
 {
@@ -27,15 +28,12 @@ class ClienteController extends Controller
         $endereco = new Endereco($values);
         $endereco->logradouro = $request->input("endereco", "");
 
-        try{
-            \DB::beginTransaction();
-            $usuario->save();
-            $endereco->usuario_id = $usuario->id; //relaciona as tabelas
-            $endereco->save();
-            \DB::commit();
-        }catch(\Exception $e){
-            \DB::rollback();
-        }
+        $clienteService = new ClienteService();
+        $result = $clienteService->salvarUsuario($usuario, $endereco);
+
+        $message = $result["message"];
+        $status = $result["status"];
+        $request->session()->flash($status, $message);
 
         return redirect()->route('cadastrar');
     }
