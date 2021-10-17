@@ -45,3 +45,5 @@ Route::match(['get', 'post'], '/{indice}/excluircarrinho', [ ProdutoController::
 
 Route::post('/carrinho/finalizar', [ ProdutoController::class, 'finalizar'])
     ->name('carrinho_finalizar');
+Route::match(['get', 'post'], '/compras/historico', [ ProdutoController::class, 'historico'])
+    ->name('compra_historico');
