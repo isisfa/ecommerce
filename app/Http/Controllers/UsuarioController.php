@@ -14,6 +14,9 @@ class UsuarioController extends Controller
         if($request->isMethod("POST")){
             $login = $request->input("login");
             $senha = $request->input("senha");
+            //ignorar pontos e traços do login
+            $login = preg_replace("/[^0-9]/", "", $login);
+
             //Logar:
             if(Auth::attempt(['login' => $login, 'password' => $senha])){
                 return redirect()->route("home");
