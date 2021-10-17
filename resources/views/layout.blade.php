@@ -16,8 +16,8 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 <a class="nav-link" href="{{ route('categoria') }}">Categorias</a>
-                <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
                 @if (!\Auth::user())
+                    <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
                     <a class="nav-link" href="{{ route('logar') }}">Login</a>
                 @else
                     <a class="nav-link" href="{{ route('sair') }}">Logout</a>
