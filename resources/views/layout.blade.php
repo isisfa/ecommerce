@@ -17,6 +17,7 @@
                 <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 <a class="nav-link" href="{{ route('categoria') }}">Categorias</a>
                 <a class="nav-link" href="{{ route('cadastrar') }}">Cadastrar</a>
+                <a class="nav-link" href="{{ route('logar') }}">Login</a>
             </div>
         </div>
         <a href="{{ route('ver_carrinho') }}" class="btn btn-sm"><i class="fa fa-shopping-cart fa-2x"></i></a>
