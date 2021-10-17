@@ -20,10 +20,13 @@ class UsuarioController extends Controller
             }else{
                 $request->session()->flash("err", "Usuário / senha inválidos");
                 return redirect()->route("logar");
-
             }
         }
-
         return view("logar", $data);
+    }
+
+    public function sair(Request $request){
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

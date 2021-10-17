@@ -32,6 +32,8 @@ Route::match(['get', 'post'], '/cliente/cadastrar', [ ClienteController::class, 
     ->name('cadastrar_cliente');
 Route::match(['get', 'post'], '/logar', [ UsuarioController::class, 'logar'])
     ->name('logar');
+Route::get('/sair', [ UsuarioController::class, 'sair'])
+    ->name('sair');
 
 
 Route::match(['get', 'post'], '/{idproduto}/carrinho/adicionar', [ ProdutoController::class, 'adicionarCarrinho'])
