@@ -93,4 +93,8 @@ class ProdutoController extends Controller
         $data["lista"] = $listaPedido;
         return view("compra/historico", $data);
     }
+
+    public function detalhes(Request $request){
+        echo "detalhes";
+    }
 }
