@@ -1,3 +1,10 @@
+# Ecommerce - Femme
+## Ongoing project of an Ecommerce web application consisting of Homepage, Products by Category, Shopping Cart, Customer Registration, Login and My Shopping.
+
+### Tools and Technologies: Laravel, PHP, MySQL, HTML, CSS, Bootstrap.
+
+<p align="center"><img src= "./README-image.gif" width= "700px"></p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
