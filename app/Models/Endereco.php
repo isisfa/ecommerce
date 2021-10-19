@@ -11,7 +11,7 @@ class Endereco extends RModel
         return $this->belongsTo(Usuario::class, 'usuario_id');
     }
 
-    public function setCepAttribute($login){
+    public function setCepAttribute($cep){
         $value = preg_replace("/[^0-9]/", "", $cep);
         $this->attributes["cep"] = $value;
     }

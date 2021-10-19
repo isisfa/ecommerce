@@ -20,7 +20,7 @@ class ProdutoController extends Controller
         return view("home", $data);
     }
 
-    public function categoria($idcategoria = 0, Request $categoria){
+    public function categoria(Request $categoria, $idcategoria = 0){
         $data = [];
 
         //SELECT * FROM categorias
@@ -40,7 +40,7 @@ class ProdutoController extends Controller
         return view("categoria", $data);
     }
 
-    public function adicionarCarrinho($idProduto = 0, Request $request){
+    public function adicionarCarrinho(Request $request, $idProduto = 0){
         $prod = Produto::find($idProduto);
 
         if($prod){
@@ -95,6 +95,7 @@ class ProdutoController extends Controller
     }
 
     public function detalhes(Request $request){
-        echo "detalhes";
+        $idpedido = $request->input('idpedido');
+        echo "Detalhes do pedido: " . $idpedido;
     }
 }

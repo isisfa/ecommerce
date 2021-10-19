@@ -9,7 +9,7 @@ use App\Models\ItensPedido;
 
 class VendaService {
 
-    public function finalizarVenda($prods = [], Usuario $user){
+    public function finalizarVenda($prods, Usuario $user){
         try{
             \DB::beginTransaction();
             $dtHoje = new \DateTime();
